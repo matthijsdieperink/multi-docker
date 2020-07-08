@@ -8,14 +8,14 @@ script:
   - docker run -e CI=true matthijsdieperink/react-test npm test
 
 after_success:
-  - docker build -t matthijsdieperink/multi-client ./client
-  - docker build -t matthijsdieperink/multi-nginx ./nginx
-  - docker build -t matthijsdieperink/multi-server ./server
-  - docker build -t matthijsdieperink/multi-worker ./worker
+  - docker build -t 13121007/multi-client ./client
+  - docker build -t 13121007/multi-nginx ./nginx
+  - docker build -t 13121007/multi-server ./server
+  - docker build -t 13121007/multi-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD docker.io
-  - docker push matthijsdieperink/multi-client
-  - docker push matthijsdieperink/multi-nginx
-  - docker push matthijsdieperink/multi-server
-  - docker push matthijsdieperink/multi-worker
+  - docker push 13121007/multi-client
+  - docker push 13121007/multi-nginx
+  - docker push 13121007/multi-server
+  - docker push 13121007/multi-worker
